@@ -55,6 +55,14 @@ import EnterResultsPage from '@/pages/teacher/EnterResultsPage';
 import ClassDetailsPage from '@/pages/teacher/ClassDetailsPage';
 import EditExamPage from '@/pages/teacher/EditExamPage';
 
+// Parent Pages
+import ParentDashboard from '@/pages/parent/ParentDashboard';
+import ParentAttendancePage from '@/pages/parent/AttendancePage';
+import ParentFeeDetailsPage from '@/pages/parent/FeeDetailsPage';
+import ParentGradesPage from '@/pages/parent/GradesPage';
+import ParentNoticesPage from '@/pages/parent/NoticesPage';
+import ParentProfilePage from '@/pages/parent/ProfilePage';
+
 const AppRoutes = () => {
   return (
     <Routes>
@@ -117,6 +125,16 @@ const AppRoutes = () => {
         <Route path="exams/create" element={<TeacherCreateExamPage />} />
         <Route path="exams/edit/:id" element={<EditExamPage />} />
         <Route path="results/enter" element={<EnterResultsPage />} />
+      </Route>
+
+      {/* Parent Routes */}
+      <Route path="/parent" element={<DashboardLayout />}>
+        <Route path="dashboard" element={<ParentDashboard />} />
+        <Route path="attendance" element={<ParentAttendancePage />} />
+        <Route path="fee" element={<ParentFeeDetailsPage />} />
+        <Route path="grades" element={<ParentGradesPage />} />
+        <Route path="notices" element={<ParentNoticesPage />} />
+        <Route path="profile" element={<ParentProfilePage />} />
       </Route>
     </Routes>
   );
